@@ -54,8 +54,8 @@ public class MemberController {
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public String login(@RequestParam("mb_ID") String mb_ID, @RequestParam String mb_passwd, HttpServletResponse response,
-			HttpSession session) throws Exception {
+	public String login(@RequestParam("mb_ID") String mb_ID, @RequestParam String mb_passwd, 
+			HttpServletResponse response, HttpSession session) throws Exception {
 		int check = memberService.userCheck(mb_ID, mb_passwd);
 
 		if (check != MemberService.ID_AND_PASSWD_OK) {
